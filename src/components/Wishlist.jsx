@@ -18,7 +18,7 @@ export default function Wishlist() {
   }
 
   return (
-    <div>
+    <div className="wishlist-main">
       <h1>Wishlist</h1>
       {wish.length <= 3 ? (
         <div>
@@ -32,9 +32,9 @@ export default function Wishlist() {
             Add
           </button>
           <div className="box">
-            {wish.map(({ wish, fullfill }) => {
+            {wish.map(({ wish, fullfill }, id) => {
               return (
-                <div className="card">
+                <div className="card" key={id}>
                   <h3>{wish}</h3>
                 </div>
               );
